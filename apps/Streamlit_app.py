@@ -17,9 +17,7 @@ st.set_page_config(
 )
 
 #Image Description
-image = Image.open('image1.jpg')
-image_y = Image.open('image2.png')
-st.image([image,image_y])
+st.image = Image.open("sentiment inage 2.jpg")
 
 
 @st.cache_resource
@@ -51,15 +49,15 @@ with st.sidebar:
 
 #Graphical representation
 st.sidebar.markdown("### Number of tweets by sentiment")
-sentiment_count = df['safe_text'].value_counts()
-sentiment_count = pd.DataFrame({'Sentiment':sentiment_count.index, 'Tweets':sentiment_count.values})
+sentiment_count = df["safe_text"].value_counts()
+sentiment_count = pd.DataFrame({'Sentiment':sentiment_count.index, "Tweets":sentiment_count.values})
 if not st.sidebar.checkbox("Hide", True):
     st.markdown("### Number of tweets by sentiment")
-    if select == 'Bar plot':
-        fig = px.bar(sentiment_count, x='Sentiment', y='Tweets', color='Tweets', height=50)
+    if select == "Bar plot":
+        fig = px.bar(sentiment_count, x="Sentiment", y="Tweets", color="Tweets", height=50)
         st.plotly_chart(fig)
     else:
-        fig = px.pie(sentiment_count, values='Tweets', names='Sentiment')
+        fig = px.pie(sentiment_count, values="Tweets", names="Sentiment")
         st.plotly_chart(fig)
 
 
@@ -68,15 +66,15 @@ if not st.sidebar.checkbox("Hide", True):
 
 # Side view description 
 st.sidebar.subheader("Show random tweet")
-random_tweet = st.sidebar.radio('Sentiment', ('positive', 'neutral', 'negative'))
-st.sidebar.markdown(df['safe_text'])
+random_tweet = st.sidebar.radio("Sentiment", ("positive", "neutral", "negative"))
+st.sidebar.markdown(df["safe_text"])
 
 
-st.markdown("[Github link](https://github.com/kwasiasomani)")
-st.markdown("[Medium link](https://medium.com/@kwasiasomani85)")
-st.markdown('Created by Foster,Kwasi,Linda,Stella,Joshua and Bright')
-user_input = st.text_area('Enter text to predict')
-button = st.button('predict')
+st.markdown("[Github link](https://github.com/Norkplim22)")
+st.markdown("[Medium link](https://medium.com/@cnorkplim)")
+st.markdown("Created by Foster,Kwasi,Linda,Stella,Joshua and Bright")
+user_input = st.text_area("Enter text to predict")
+button = st.button("predict")
 
 
 # Define Helper Function

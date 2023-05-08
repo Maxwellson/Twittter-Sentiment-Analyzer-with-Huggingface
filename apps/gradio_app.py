@@ -6,9 +6,9 @@ from scipy.special import softmax
 import gradio as gr
 
 
-tokenizer = AutoTokenizer.from_pretrained('Kwasiasomani/Finetuned-Roberta-base-model')
-config = AutoConfig.from_pretrained('Kwasiasomani/Finetuned-Roberta-base-model')
-model = AutoModelForSequenceClassification.from_pretrained('Kwasiasomani/Finetuned-Roberta-base-model')
+tokenizer = AutoTokenizer.from_pretrained('lindaclara22/twitter-sentiment-analysis-roberta-model')
+config = AutoConfig.from_pretrained('lindaclara22/twitter-sentiment-analysis-roberta-model')
+model = AutoModelForSequenceClassification.from_pretrained('lindaclara22/twitter-sentiment-analysis-roberta-model')
 
 # #Preprocess text (username and link placeholders)
 def preprocess(text):
@@ -24,7 +24,7 @@ def sentiment_analysis(text):
     text = preprocess(text)
 
     # PyTorch-based models
-    encoded_input = tokenizer(text, return_tensors='pt')
+    encoded_input = tokenizer(text, return_tensors="pt")
     output = model(**encoded_input)
     scores_ = output[0][0].detach().numpy()
     scores_ = softmax(scores_)
@@ -37,13 +37,14 @@ def sentiment_analysis(text):
 
 
 demo = gr.Interface(
+    img = gr.Image("sentiment image 1.png").style(height="24")
+    Title=gr.Label("COVID SENTIMENT ANALYZER")
+    description="This app performs sentiment analysis on tweets. Only English tweets are supported."
     fn=sentiment_analysis, 
     inputs=gr.Textbox(placeholder="Write your tweet here..."), 
     outputs="label", 
     interpretation="default",
-    examples=[["This is Spectacular!"]])
-
-    
+    examples=[["This is Spectacular!"]])      
 
 
 demo.launch()
