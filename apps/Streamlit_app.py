@@ -22,8 +22,8 @@ st.image = Image.open("sentiment inage 2.jpg")
 
 @st.cache_resource
 def get_model():
-    model = transformers.AutoModelForSequenceClassification.from_pretrained("Kwasiasomani/Finetuned-Distilbert-base-model")
-    tokenizer = transformers.AutoTokenizer.from_pretrained("Kwasiasomani/Finetuned-Distilbert-base-model")
+    model = transformers.AutoModelForSequenceClassification.from_pretrained("lindaclara22/Sentiment-analysis-distillbert-base-uncased-model")
+    tokenizer = transformers.AutoTokenizer.from_pretrained("lindaclara22/Sentiment-analysis-distillbert-base-uncased-model")
     return tokenizer,model
 
 tokenizer, model = get_model()
