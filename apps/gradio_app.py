@@ -37,9 +37,8 @@ def sentiment_analysis(text):
 
 
 demo = gr.Interface(
-    img = gr.Image("sentiment image 1.png").style(height="24")
-    Title=gr.Label("COVID SENTIMENT ANALYZER")
-    description="This app performs sentiment analysis on tweets. Only English tweets are supported."
+    title="COVID SENTIMENT ANALYZER",
+    description="This app performs sentiment analysis on tweets. Only English tweets are supported.",
     fn=sentiment_analysis, 
     inputs=gr.Textbox(placeholder="Write your tweet here..."), 
     outputs="label", 

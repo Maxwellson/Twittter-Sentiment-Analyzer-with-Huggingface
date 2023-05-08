@@ -17,7 +17,9 @@ st.set_page_config(
 )
 
 #Image Description
-st.image = Image.open("sentiment inage 2.jpg")
+image = Image.open("sentiment image 1.jpg")
+image_y = Image.open("sentiment image 2.png")
+st.image([image,image_y])
 
 
 @st.cache_resource
