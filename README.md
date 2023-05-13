@@ -64,8 +64,5 @@ To make the fine-tuned model more accessible to all, two models with the lowest 
 The github repo is provided with a dockerfile and requirements.txt file to recreate the app deployed in the project. The dockerfile creates a virtual environment with required python version and packages for web app deployment. The required Python version must be  3.9. All the dependencies required for the code in the repo can be installed using requirements.txt. 
 
 # Author
-Linda Adzigbli
+Joshua Enoch Maxwellson
 
-# Links
-Medium-https://medium.com/@cnorkplim/covid-19-twitter-sentiment-analysis-bde898d97604
-Hugging face-https://huggingface.co/lindaclara22
